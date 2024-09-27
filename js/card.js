@@ -100,7 +100,6 @@ function init() {
 }
 
 // 리셋 버튼 클릭 시 리셋 기능
-document.querySelector('.button').addEventListener('click', resetGame);
 
 function resetGame() {
     const box = document.querySelector('.s_box');
@@ -109,7 +108,7 @@ function resetGame() {
     resetBoard(); // 보드 초기화
 }
 
-document.querySelector('.button').addEventListener('click', start);
+
 
 function start() {
     resetGame(); // 게임 초기화
@@ -127,6 +126,10 @@ function start() {
         });
     }, 3000); // 5000ms = 5초
 }
+
+document.getElementById('reset').addEventListener('click', resetGame);
+document.getElementById('start').addEventListener('click', start);
+
 
 // 초기화 함수 호출
 init();

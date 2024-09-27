@@ -22,15 +22,13 @@ function h_click() {
     }
     this.removeEventListener('click', h_click);
 
-    setTimeout ( () => {
-        if(count >= 2){
-            let win = checkForWin()
-            if (win != null){
-                alert("승자는 "  + win  + "입니다!");
-                resetGame();
-            }
+    if(count >= 2){
+        let win = checkForWin()
+        if (win != null){
+            alert("승자는 "  + win  + "입니다!");
+            resetGame();
         }
-    }, 1500);
+    }
 }
 
 
