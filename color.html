@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    
+    <link rel="stylesheet" href="css/commom.css">
+    <link rel="stylesheet" href="css/color.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Color</h1>
+    </div>
+
+    <div class="body">
+        <div class="box">
+            <div class="q_box"></div>
+            
+        </div>
+
+        <div class="answer_box">
+            <input class="answer" type="text" id="ans" placeholder="색상입력 (예: #ff0000)" onkeypress="ee(event)" >
+            <input type="button" value="input" onclick="checkAnswer()" > 
+        </div>
+
+    </div>    
+
+    <div class="footer">
+        <input class="button" type="reset" value="Change" onclick="changeColor()">
+    </div>
+
+</body>
+
+<script type="text/javascript" src="js/color.js"> </script>
+
+</html>

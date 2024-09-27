@@ -1,0 +1,16 @@
+.timer_box {
+    width: 300px; height: 50%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10%;
+    background-color: skyblue;
+}
+
+#stopwatch {
+    font-size: 60px;
+    font-weight: bold;
+}

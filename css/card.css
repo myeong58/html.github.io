@@ -1,0 +1,37 @@
+.body {
+    height: 550px;
+}
+
+.box  {
+    width: 70%; height: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10%;
+    background-color: ivory;
+}
+
+.s_box {
+    width: 100%;
+    margin: 0 auto;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    width: 100%; 
+}
+
+.img {
+    width: 80px; height: 80px;
+    margin: 7px 7px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    border-radius: 15%;
+    border: 1px solid black;
+}
+
+
+.img:hover{
+    opacity: 30%;
+}
