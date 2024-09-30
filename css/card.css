@@ -23,7 +23,8 @@
 }
 
 .img {
-    width: 80px; height: 80px;
+    /* width: 80px; height: 80px; */
+    width: 20%; height: auto;
     margin: 7px 7px;
     cursor: pointer;
     transition: transform 0.5s;

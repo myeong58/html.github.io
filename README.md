@@ -1,1 +1,1 @@
-https://myeong58.github.io/html.github.io/
+https://myeong58.github.io/toy
