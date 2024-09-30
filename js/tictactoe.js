@@ -5,7 +5,7 @@ function createBoard() {
     const box = document.querySelector('.s_box');
     for(let i =1; i<10; i++) {
         const img = document.getElementById(i);
-        img.src = "img/ttt/no.png"; // 초기 상태의 카드 이미지
+        img.src = "../img/ttt/no.png"; // 초기 상태의 카드 이미지
         img.alt = "";
         img.addEventListener('click', h_click);
     }
@@ -14,10 +14,10 @@ function createBoard() {
 // 클릭 이벤트 핸들러
 function h_click() {
     if (count++ % 2 === 1 ) {
-        this.src = 'img/ttt/O.png'; // 첫 번째 플레이어 o
+        this.src = '../img/ttt/O.png'; // 첫 번째 플레이어 o
         this.alt = "O";
     }else{
-        this.src = 'img/ttt/X.png'; // 두 번째 플레이어 x
+        this.src = '../img/ttt/X.png'; // 두 번째 플레이어 x
         this.alt = "X";
     }
     this.removeEventListener('click', h_click);

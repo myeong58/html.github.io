@@ -1,19 +1,21 @@
 const images = [
-    { src: 'img/card/딸기.png', dataCard: '딸기' },
-    { src: 'img/card/딸기.png', dataCard: '딸기' },
-    { src: 'img/card/레몬.png', dataCard: '레몬' },
-    { src: 'img/card/레몬.png', dataCard: '레몬' },
-    { src: 'img/card/바나나.png', dataCard: '바나나' },
-    { src: 'img/card/바나나.png', dataCard: '바나나' },
-    { src: 'img/card/사과.png', dataCard: '사과' },
-    { src: 'img/card/사과.png', dataCard: '사과' },
-    { src: 'img/card/포도.png', dataCard: '포도' },
-    { src: 'img/card/포도.png', dataCard: '포도' },
-    { src: 'img/card/수박.png', dataCard: '수박' },
-    { src: 'img/card/수박.png', dataCard: '수박' }
+    { src: "../img/card/딸기.png", dataCard: '딸기' },
+    { src: "../img/card/딸기.png", dataCard: '딸기' },
+    { src: "../img/card/레몬.png", dataCard: '레몬' },
+    { src: "../img/card/레몬.png", dataCard: '레몬' },
+    { src: "../img/card/바나나.png", dataCard: '바나나' },
+    { src: "../img/card/바나나.png", dataCard: '바나나' },
+    { src: "../img/card/사과.png", dataCard: '사과' },
+    { src: "../img/card/사과.png", dataCard: '사과' },
+    { src: "../img/card/포도.png", dataCard: '포도' },
+    { src: "../img/card/포도.png", dataCard: '포도' },
+    { src: "../img/card/수박.png", dataCard: '수박' },
+    { src: "../img/card/수박.png", dataCard: '수박' }
 ];
 
-const backImg = "img/card/back.png";
+const backImg = "../img/card/back.png";
+let count  = 0;
+let check = false;
 
 let firstCard = null;
 let secondCard = null;
@@ -44,21 +46,22 @@ function createCards() {
 
 // 카드 클릭 이벤트 핸들러
 function flipCard() {
-    if (lockBoard) return; // 카드 클릭 잠금
-    if (this === firstCard) return; // 이미 선택된 카드 클릭 무시
+    if (check){
+        if (lockBoard) return; // 카드 클릭 잠금
+        if (this === firstCard) return; // 이미 선택된 카드 클릭 무시
 
-    this.src = this.dataset.image;
-    this.style.transform = 'rotateY(180deg)'; 
-    this.style.transition = 'transform 0.5s';
-    if (!firstCard) {
-        firstCard = this; // 첫 번째 카드 저장
-        return;
+        this.src = this.dataset.image;
+        this.style.transform = 'rotateY(180deg)'; 
+        this.style.transition = 'transform 0.5s';
+        if (!firstCard) {
+            firstCard = this; // 첫 번째 카드 저장
+            return;
+        }
+        
+        secondCard = this; // 두 번째 카드 저장
+        checkForMatch();
     }
-    
-    secondCard = this; // 두 번째 카드 저장
-    checkForMatch();
 }
-
 
 // 카드 매칭 확인
 function checkForMatch() {
@@ -71,6 +74,14 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    
+    count++
+    if (count > 5){
+        setTimeout (() => {
+            alert("Win!");
+            resetGame();           
+        }, 500);
+    }
     resetBoard();
 }
 
@@ -102,16 +113,18 @@ function init() {
 // 리셋 버튼 클릭 시 리셋 기능
 
 function resetGame() {
+    resetClock();
+    check = false;
+    count = 0;
     const box = document.querySelector('.s_box');
     box.innerHTML = ''; // 기존 카드 삭제
     createCards(); // 새로운 카드 생성 및 섞기
     resetBoard(); // 보드 초기화
 }
 
-
-
 function start() {
     resetGame(); // 게임 초기화
+    check = true;
 
     // 모든 카드의 앞면을 보여줌
     const cards = document.querySelectorAll('.img');
@@ -124,12 +137,13 @@ function start() {
         cards.forEach(card => {
             card.src = backImg; // 뒷면 이미지로 설정
         });
-    }, 3000); // 5000ms = 5초
+        startClock();
+    }, 3000); // 3000ms = 3초
+
 }
 
 document.getElementById('reset').addEventListener('click', resetGame);
 document.getElementById('start').addEventListener('click', start);
-
 
 // 초기화 함수 호출
 init();

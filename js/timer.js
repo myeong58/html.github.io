@@ -2,6 +2,7 @@ const stopwatch = document.getElementById("stopwatch");
 
 let TIME = 0;
 let timerId;
+let timer_check = true;
 
 function printTime() {
     TIME += 0.01; // 0.1초씩 증가
@@ -32,4 +33,13 @@ function resetClock() {
     stopClock();
     stopwatch.textContent = "00:00.00"; // 초기화 시 표시 형식
     TIME = 0;
+}
+
+function pushButton(){
+    if(timer_check){
+        startClock();
+    }
+    else
+        stopClock();
+    timer_check = !timer_check;
 }

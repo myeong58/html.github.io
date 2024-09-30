@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
 
-    <link rel="stylesheet" href="css/commom.css">
-    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="../css/commom.css">
+    <link rel="stylesheet" href="../css/timer.css">
 
 </head>
 
 <body>
     <div class="header">
+        <a href="../index.html">
+            <img src="../img/home.png"  class="home" alt="home">
+        </a>
         <h1>Timer</h1>
     </div>
 
@@ -22,8 +25,7 @@
         </div>
     
         <div class="timer_btn">
-            <input class="button" type="button" value="start" onclick="startClock()">
-            <input class="button" type="button" value="stop" onclick="stopClock()">
+            <input class="s_button" type="button" value="start/stop" onclick="pushButton()"> 
             <input class="button" type="button" value="reset" onclick="resetClock()">
         </div>
     </div>
@@ -33,6 +35,6 @@
 
 </body>
 
-<script type="text/javascript" src="js/timer.js"> </script>
+<script type="text/javascript" src="../js/timer.js"> </script>
 
 </html>
