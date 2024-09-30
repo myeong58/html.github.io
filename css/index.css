@@ -1,8 +1,9 @@
 .s_box {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* 여러 줄로 감싸기 */
     justify-content: center; /* 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
+    max-width: 300px; /* 최대 너비 설정 (3개 열을 위해) */
 }
 
 .s_box a {
@@ -11,11 +12,12 @@
     align-items: center; /* 중앙 정렬 */
     text-align: center; /* 텍스트 중앙 정렬 */
     margin: 10px; /* 간격 추가 */
+    width: 80px; /* 각 아이템의 너비 설정 */
 }
 
 img {
     width: 80px; height: 80px;
-    margin-bottom: 5px; /* 이미지와 텍스트 간격 */
+    margin: 0 20px 10px 20px;
     cursor: pointer;
     transition: transform 0.5s;
     border-radius: 15%;

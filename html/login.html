@@ -6,23 +6,43 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="../css/commom.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    
 </head>
 <body>
-    
-    <header>
-        <h2>Login</h2>
-    </header>
 
-    <body>
-        <input id="id" type="text" placeholder="id">
-        <input id="passwd" type="password" placeholder="password">
+    <div class="header">
+        <a href="../index.html">
+            <img src="../img/home.png"  class="home" alt="home">
+        </a>
+        <h1>Login</h1>
+    </div>
 
-        <input type="button" value="Login">
-    </body>
+    <div class="body">
+        <div class="login_wrap">
+            <h2>Login</h2>
+            <form id="login-form" method="post" action="index.html">
+                <input id="id" type="text" name="username" placeholder="Username">
+                <input id="passwd" type="password" name="password" placeholder="Password">
+                <div class="make_id_box">
+            
+                        <input id = "make_id" type="button" value="계정 만들기">
+                        <input id = "find_pass" type="button" value="비밀번호 찾기">
+                </div>
 
-    <footer>
+                <input id="log_b" type="submit" value="Login">
+           <!-- <input type="submit" value="Login" id="login-form-submit"> -->
+            </form>
+            
+        </div>
+        
+    </div>
 
-    </footer>
+    <div class="footer">
+    </div>
+
+    <script type="text/javascript" src="../js/login.js"> </script>
 
 </body>
 </html>
