@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book</title>
+
+    <link rel="stylesheet" href="../css/commom.css">
+    <link rel="stylesheet" href="../css/card.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="../index.html">
+            <img src="../img/home.png"  class="home" alt="home">
+        </a>
+        <h1>도서관 전자책 현황 </h1>
+    </div>
+
+    <div class="body">
+        <input type="text" id="todoInput" placeholder="검색" onkeyup="if(window.event.keyCode==13){add_todo()}">
+
+        <button id="addButton" class="button">추가</button>
+        
+        <h1>경기도 도서관 전자책 현황</h1>
+        <div id="dataContainer"></div>
+
+
+    </div>
+
+    <div class="footer">
+    </div>
+
+    <script type="text/javascript" src="../js/libaray.js"> </script>
+
+
+</body>
+</html>
