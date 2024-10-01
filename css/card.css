@@ -8,6 +8,8 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 10%;
+    max-width: 500px;
+    min-width: 300px;
     background-color: ivory;
 }
 
@@ -20,17 +22,20 @@
     justify-content: center;
     gap: 20px; 
     width: 100%; 
+
 }
 
 .img {
-    /* width: 80px; height: 80px; */
-    width: 20%; height: auto;
+    width: 80px; height: 80px;
+    /* width: 20%; height: auto; */
     margin: 7px 7px;
     cursor: pointer;
     transition: transform 0.5s;
     border-radius: 15%;
-    border: 1px solid black;
-}
+    border: 1px solid black; 
+} 
+
+
 
 
 #stopwatch{

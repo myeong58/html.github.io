@@ -19,7 +19,7 @@
     </div>
 
     <div class="body">
-        <input type="text" id="todoInput" placeholder="할 일을 입력하세요.">
+        <input type="text" id="todoInput" placeholder="할 일을 입력하세요." onkeyup="if(window.event.keyCode==13){add_todo()}">
 
         <button id="addButton" class="button">추가</button>
         <ul id="todoList"></ul>

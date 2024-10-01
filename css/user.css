@@ -1,0 +1,30 @@
+.box {
+    width: 480px; /* 박스의 너비 설정 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    padding: 20px; /* 안쪽 여백 */
+    display: flex; /* 플렉스 박스 사용 */
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: space-around; /* 아이템 간격 조절 */
+    margin: 10px auto; /* 가운데 정렬 */
+    background-color: ivory;
+}
+
+.user_box {
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 40%; /* 각 사용자 박스 너비 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    margin: 5px; /* 사용자 박스 간격 */
+    padding: 5px; /* 안쪽 여백 */
+}
+
+.user {
+    width: 80px; height: 80px; /* 사용자 이미지 크기 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    margin-right: 15px; /* 이미지와 텍스트 간격 */
+}
+
+h5 {
+    font-weight: bold;
+    margin: 5px 0; /* h5 요소 간격 조절 */
+}

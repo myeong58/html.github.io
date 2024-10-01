@@ -1,10 +1,10 @@
 .box  {
-    width: 480px; height: 480px;
+    width: 400px; height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    background-color:   orange;
+    border-radius: 10px;
+    background-color: orange;
 
 }
 
@@ -19,12 +19,11 @@
 
 .img {
     width: 90px; height: 90px;
-    margin: 15px;
+    margin: 5px;
     cursor: pointer;
     border-radius: 10%;
     transition: transform 0.5s;
 }
-
 
 .img:hover{
     opacity: 30%;

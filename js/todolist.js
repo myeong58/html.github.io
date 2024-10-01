@@ -1,31 +1,34 @@
-let todos = [];
-let count_id = 0;
+let count_id = 0; // 초기 ID 값
+let todos = []; // 할 일 목록 배열
 
-document.getElementById('addButton').addEventListener('click', function () {
+// add_todo 함수 정의
+function add_todo() {
     const input = document.getElementById('todoInput');
     const todoText = input.value.trim();
 
-    if(todoText){
-        const todo = {id: count_id++, text: todoText};
+    if (todoText) {
+        const todo = { id: count_id++, text: todoText };
 
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
-               'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(todo)
         })
         .then(response => response.json())
         .then(data => {
-            todos.push({id: count_id, text:todoText });
+            todos.push({ id: count_id, text: todoText });
             console.log("id:", count_id, "text:", todoText);
             input.value = '';
             renderTodos();
         })
         .catch(error => console.error("Error: ", error));
-               
     }
-});
+}
+
+// 버튼 클릭 이벤트 리스너
+document.getElementById('addButton').addEventListener('click', add_todo);
 
 
 function renderTodos() {
