@@ -14,19 +14,15 @@ $.ajax({
       // for문 (8개)
         var divs = document.getElementsByTagName('div');
         
-        for(var i=0; i<divs.length; i++){
-
-              $("div").eq(i).append("<img src='"+msg.documents[i].thumbnail+"'/>");
-              $("div").eq(i).append("<h3>"+msg.documents[i].title+"</h3>");
-              $("div").eq(i).append("<h6>"+msg.documents[i].authors+"</h6>");
-
-              var str=msg.documents[i].contents;
-              var str2=str.substring(0,60);
-
-              $("div").eq(i).append("<p>"+str2+"</p>");
-              $("div").eq(i).append("<button>"+"click"+"</button>");  
-
-        }
+        const htmlContent = data.map(item => `
+          <div>
+            <h3>${item['도서 제목']}</h3>
+            <p>저자: ${item['저자']}</p>
+            <p>출판사: ${item['출판사']}</p>
+            <p>대출 가능: ${item['대출가능여부']}</p>
+          </div>
+          `).join('');
+        
     });
 
 
